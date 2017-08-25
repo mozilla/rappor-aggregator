@@ -42,13 +42,19 @@ $ ./regtest.sh run-seq 'r-gauss-small-sim_bloom_filter1_1|r-zipf1-small-sim_fina
 
 ## Installing dependencies
 
-Generally, only the usual SciPy tech stack is required.
+Generally, only the usual SciPy tech stack is required. Additionally, `tqdm` is used for progress bars.
 
 ```sh
-$ pip install scipy numpy matplotlib pandas sklearn
+$ pip install scipy numpy matplotlib pandas sklearn tqdm
 ```
 
 To be able to use the same hash functions as the client part, some files were already copied from the other repository and put into the `client` folder.
+
+If you want to have progress bars displayed, which is very helpful when running many simulations:
+```sh
+$ pip2 install ipywidgets
+$ jupyter nbextension enable --py --sys-prefix widgetsnbextension
+```
 
 ## Running the analysis
 
