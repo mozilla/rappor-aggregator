@@ -62,9 +62,16 @@ After the analysis is done, a table showing the strings with the highest estimat
 num_displayed_results = 15
 ```
 
-### Option 1: Data Generation
-
 You can either automatically let this notebook generate data, or load an existing dataset.
+
+
+```python
+generate_data = True
+```
+
+## Data loading
+
+### Option 1: Data Generation
 
 
 ```python
@@ -76,11 +83,6 @@ distribution = ALLOWED_DISTRIBUTIONS[0]
 ### Option 2: Loading an existing dataset
 
 If you already have a dataset that you want to load, change this flag to `False`:
-
-
-```python
-generate_data = True
-```
 
 `reported_data` should then be a Python list that contains tuples.
 The first element of each tuple is a numpy array that contains the reported bits. All these arrays need to have length `num_bits`. The second element is an integer that describes which cohort the respective user is assigned to.
@@ -122,6 +124,8 @@ true_counts = []
 If the dataset is automatically generated, `true_counts` is filled with the correct data and `candidates` defaults to all reported values.
 
 ---
+
+# Note: The RAPPOR implementation is starting from here. Only touch this part if you know what you are doing.
 
 ## Checking the settings
 
